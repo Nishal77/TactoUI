@@ -1,121 +1,66 @@
-import Link from 'next/link';
-import { ArrowRight, Github, Star, Zap } from 'lucide-react';
+'use client'
+import { ArrowRight, Mail, SendHorizonal } from 'lucide-react'
+import Link from 'next/link'
+import LandingHeader from '../components/LandingHeader'
 
-export default function HomePage() {
-  return (
-    <div className="min-h-screen bg-black">
-      {/* Header */}
-      <header className="border-b border-gray-800 bg-black/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">T</span>
-              </div>
-              <span className="text-xl font-bold text-white">TactoUI</span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Link
-                href="/components"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                Components
-              </Link>
-              <Link
-                href="https://github.com/tactoui/tactoui"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <Github className="h-5 w-5" />
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
+export default function HeroSection() {
+    return (
+        <>
+            <LandingHeader />
 
-      {/* Hero Section */}
-      <main className="container mx-auto px-4 py-16">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center rounded-full bg-blue-900/20 px-4 py-2 text-sm font-medium text-blue-300 mb-8">
-            <Star className="h-4 w-4 mr-2" />
-            Now in Beta - React Native UI Components
-          </div>
-          
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Beautiful React Native
-            <span className="text-blue-400"> Components</span>
-          </h1>
-          
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Build stunning React Native apps with our collection of accessible, 
-            customizable components powered by NativeWind and Tailwind CSS.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link
-              href="/components"
-              className="inline-flex items-center justify-center px-8 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-colors"
-            >
-              Explore Components
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-            <Link
-              href="https://github.com/tactoui/tactoui"
-              className="inline-flex items-center justify-center px-8 py-3 border border-gray-600 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
-            >
-              <Github className="mr-2 h-4 w-4" />
-              View on GitHub
-            </Link>
-          </div>
-        </div>
+            <main className="pt-20">
+                <section className="overflow-hidden">
+                    <div className="relative w-full px-6 py-28 lg:py-20">
+                        <div className="flex items-center justify-center min-h-[80vh]">
+                            <div className="relative z-10 mx-auto max-w-4xl text-center">
+                                <div className="mx-auto flex w-fit items-center gap-2 border border-gray-600 rounded-full px-4 py-2">
+                                    <span className="bg-blue-600 rounded-full px-2 py-1 text-xs text-white">New</span>
+                                    <span className="text-sm text-gray-300">React Native UI Components</span>
+                                    <ArrowRight className="size-4 text-gray-400" />
+                                </div>
 
-        {/* Features */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="bg-gray-900 rounded-lg p-6 shadow-sm border border-gray-800">
-            <div className="h-12 w-12 bg-blue-900/20 rounded-lg flex items-center justify-center mb-4">
-              <Zap className="h-6 w-6 text-blue-400" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">
-              Easy to Use
-            </h3>
-            <p className="text-gray-400">
-              Copy and paste components into your app, or use our CLI to scaffold them automatically.
-            </p>
-          </div>
-          
-          <div className="bg-gray-900 rounded-lg p-6 shadow-sm border border-gray-800">
-            <div className="h-12 w-12 bg-green-900/20 rounded-lg flex items-center justify-center mb-4">
-              <Star className="h-6 w-6 text-green-400" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">
-              Accessible
-            </h3>
-            <p className="text-gray-400">
-              Built with accessibility in mind, following React Native best practices and guidelines.
-            </p>
-          </div>
-          
-          <div className="bg-gray-900 rounded-lg p-6 shadow-sm border border-gray-800">
-            <div className="h-12 w-12 bg-purple-900/20 rounded-lg flex items-center justify-center mb-4">
-              <Github className="h-6 w-6 text-purple-400" />
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">
-              Open Source
-            </h3>
-            <p className="text-gray-400">
-              Free and open source. Contribute, customize, and build amazing apps together.
-            </p>
-          </div>
-        </div>
-      </main>
+                                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-6xl">Your Go-To React Native UI Library for Rapid App Development</h1>
+                                <p className="mt-8 text-lg text-gray-300 max-w-2xl mx-auto">Build stunning React Native apps with our collection of accessible, customizable components powered by NativeWind and Tailwind CSS. Copy and paste components or use our CLI to scaffold them automatically.</p>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-800 bg-black/80 backdrop-blur-sm mt-16">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-gray-400">
-            <p>&copy; 2024 TactoUI. Built with ❤️ for the React Native community.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+                                <div>
+                                    <form
+                                        action=""
+                                        className="mx-auto my-10 max-w-sm lg:my-12 lg:ml-0 lg:mr-auto">
+                                        <div className="bg-background has-[input:focus]:ring-muted relative grid grid-cols-[1fr_auto] items-center rounded-[calc(var(--radius)+0.75rem)] border pr-3 shadow shadow-zinc-950/5 has-[input:focus]:ring-2">
+                                            <Mail className="text-caption pointer-events-none absolute inset-y-0 left-5 my-auto size-5" />
+
+                                            <input
+                                                placeholder="Your mail address"
+                                                className="h-14 w-full bg-transparent pl-12 focus:outline-none"
+                                                type="email"
+                                            />
+
+                                            <div className="md:pr-1.5 lg:pr-0">
+                                                <button
+                                                    type="submit"
+                                                    aria-label="submit"
+                                                    className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+                                                    <span className="hidden md:block">Get Started</span>
+                                                    <SendHorizonal
+                                                        className="relative mx-auto size-5 md:hidden"
+                                                        strokeWidth={2}
+                                                    />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <ul className="list-inside list-disc space-y-2">
+                                        <li>Faster</li>
+                                        <li>Modern</li>
+                                        <li>100% Customizable</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </>
+    )
 }
