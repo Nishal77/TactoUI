@@ -8,18 +8,28 @@ export default function HeroSection() {
         <>
             <LandingHeader />
 
-            <main className="pt-20">
+            <main>
                 <section className="overflow-hidden">
-                    <div className="relative w-full px-6 py-28 lg:py-20">
-                        <div className="flex items-center justify-center min-h-[80vh]">
+                    <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-28 lg:pb-20">
+                        {/* Left Vertical Dashed Line */}
+                        <div className="absolute left-0 top-0 bottom-0 w-px border-l border-dashed bg-black/95"></div>
+                        
+                        {/* Right Vertical Dashed Line */}
+                        <div className="absolute right-0 top-0 bottom-0 w-px border-r border-dashed bg-black/95"></div>
+                        
+                        <div className="ml-4 mr-4">
+                        <div className="flex items-center justify-center min-h-[80vh] mt-16">
                             <div className="relative z-10 mx-auto max-w-4xl text-center">
                                 <div className="mx-auto flex w-fit items-center gap-2 border border-gray-600 rounded-full px-4 py-2">
-                                    <span className="bg-blue-600 rounded-full px-2 py-1 text-xs text-white">New</span>
-                                    <span className="text-sm text-gray-300">React Native UI Components</span>
+                                    <span className="bg-blue-600 rounded-full px-2 py-1 text-xs text-white">Beta</span>
+                                    <span className="text-sm text-gray-300">
+                                        Built with <span className="font-semibold text-white">NativeWind</span> &amp; <span className="font-semibold text-white">Tailwind CSS</span>
+                                    </span>
+                                    <span className="text-xs text-yellow-400 bg-yellow-900/40 rounded-full px-2 py-1 ml-2">Early Access</span>
                                     <ArrowRight className="size-4 text-gray-400" />
                                 </div>
 
-                                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-6xl">Your Go-To React Native UI Library for Rapid App Development</h1>
+                                <h1 className="mt-5 text-balance text-4xl font-bold md:text-5xl xl:text-6xl">Your Go-To React Native UI Library for Rapid App Development</h1>
                                 <p className="mt-8 text-lg text-gray-300 max-w-2xl mx-auto">Build stunning React Native apps with our collection of accessible, customizable components powered by NativeWind and Tailwind CSS. Copy and paste components or use our CLI to scaffold them automatically.</p>
 
                                 <div>
@@ -57,6 +67,7 @@ export default function HeroSection() {
                                     </ul>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </section>
