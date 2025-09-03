@@ -6,9 +6,9 @@ export default function ComponentsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
+    <div className="h-screen w-screen bg-black text-white font-sans overflow-hidden">
       <Header />
-      <div className="flex h-[calc(100vh-4rem)]">
+      <div className="flex h-[calc(100vh-4rem)] pt-16">
         {/* Left Sidebar */}
         <aside className="hidden lg:block w-64 p-4 border-r border-gray-800 overflow-y-auto">
         <div className="mb-8">
@@ -86,12 +86,12 @@ export default function ComponentsLayout({
       </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-y-auto">
+        <main className="flex-1 p-6 overflow-y-auto ml-4">
           {children}
         </main>
 
         {/* Right Sidebar */}
-        <aside className="hidden xl:block w-64 p-4 border-l border-gray-800 overflow-y-auto">
+        <aside className="hidden xl:block w-64 p-4 border-l border-gray-800 overflow-y-auto ml-4">
         <div className="mb-6">
           <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
             On This Page
