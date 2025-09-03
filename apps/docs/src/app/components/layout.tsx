@@ -1,24 +1,16 @@
+import Header from '../../components/Header';
+
 export default function ComponentsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen bg-black text-white font-sans">
-      {/* Mobile Header */}
-      <header className="lg:hidden fixed top-0 left-0 right-0 bg-black border-b border-gray-800 p-4 z-50">
-        <div className="flex items-center justify-between">
-          <h1 className="text-xl font-bold text-white">TactoUI</h1>
-          <button className="text-gray-400 hover:text-white">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </header>
-
-      {/* Left Sidebar */}
-      <aside className="hidden lg:block w-64 p-4 border-r border-gray-800 sticky top-0 h-screen overflow-y-auto">
+    <div className="min-h-screen bg-black text-white font-sans">
+      <Header />
+      <div className="flex h-[calc(100vh-4rem)]">
+        {/* Left Sidebar */}
+        <aside className="hidden lg:block w-64 p-4 border-r border-gray-800 overflow-y-auto">
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-white mb-2">TactoUI</h1>
           <p className="text-sm text-gray-400">React Native UI Components</p>
@@ -93,13 +85,13 @@ export default function ComponentsLayout({
         </nav>
       </aside>
 
-      {/* Main Content */}
-      <main className="flex-1 p-6 overflow-y-auto lg:pt-6 pt-20">
-        {children}
-      </main>
+        {/* Main Content */}
+        <main className="flex-1 p-6 overflow-y-auto">
+          {children}
+        </main>
 
-      {/* Right Sidebar */}
-      <aside className="hidden xl:block w-64 p-4 border-l border-gray-800 sticky top-0 h-screen overflow-y-auto">
+        {/* Right Sidebar */}
+        <aside className="hidden xl:block w-64 p-4 border-l border-gray-800 overflow-y-auto">
         <div className="mb-6">
           <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
             On This Page
@@ -134,7 +126,8 @@ export default function ComponentsLayout({
             </a>
           </div>
         </div>
-      </aside>
+        </aside>
+      </div>
     </div>
   );
 }
