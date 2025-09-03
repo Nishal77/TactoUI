@@ -24,7 +24,10 @@ export default function Header() {
               />
             </svg>
           </div>
-          <Link href="/" className="text-xl font-bold text-white hover:text-gray-300 transition-colors">
+          <Link
+            href="/"
+            className="text-xl font-bold text-white hover:text-gray-300 transition-colors"
+          >
             TactoUI
           </Link>
         </div>
@@ -70,7 +73,7 @@ export default function Header() {
               href="/blocks"
               className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
             >
-              Blocks
+              Blockss
             </Link>
           </nav>
 
