@@ -57,7 +57,7 @@ export default function HeroSection() {
                       {/* Explore Components Button */}
                       <Link
                         href="/components"
-                        className="group inline-flex items-center justify-center px-5 py-2.5 bg-[#181818] border border-[#232323] text-white font-medium rounded-lg hover:bg-[#232323] transition-all duration-200 hover:shadow-md hover:shadow-[#181818]/20 text-base"
+                        className="group inline-flex items-center justify-center px-5 py-2.5 bg-white border border-[#232323] text-black font-medium rounded-lg hover:bg-white/80 transition-all duration-200 hover:shadow-md hover:shadow-[#181818]/20 text-base"
                       >
                         <span>Explore Components</span>
                         <ArrowRight className="ml-1.5 h-4 w-4 group-hover:translate-x-0.5 transition-transform duration-200" />
@@ -66,7 +66,7 @@ export default function HeroSection() {
                       {/* GitHub Button */}
                       <Link
                         href="https://github.com/tactoui/tactoui"
-                        className="group inline-flex items-center justify-center px-5 py-2.5 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-all duration-200 hover:shadow-md hover:shadow-gray-800/10 border border-gray-200 hover:border-gray-300 text-base"
+                        className="group inline-flex items-center justify-center px-5 py-2.5 bg-[#181818] text-white font-medium rounded-lg hover:bg-[#232323] transition-all duration-200 hover:shadow-md hover:shadow-gray-800/10 border border-white/5 text-base"
                       >
                         <Github className="mr-1.5 h-4 w-4 group-hover:rotate-6 transition-transform duration-200" />
                         <span>View on GitHub</span>
