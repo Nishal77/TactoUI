@@ -1,0 +1,23 @@
+
+
+> @tactoui/utils@0.1.0 build /Users/nishalpoojary/Projects/Codes/ProjectRD/TactoUI/packages/utils
+> tsup
+
+[34mCLI[39m Building entry: src/index.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.5.0
+[34mCLI[39m Using tsup config: /Users/nishalpoojary/Projects/Codes/ProjectRD/TactoUI/packages/utils/tsup.config.ts
+[34mCLI[39m Target: es2020
+[34mCLI[39m Cleaning output folder
+[34mCJS[39m Build start
+[34mESM[39m Build start
+[32mESM[39m [1mdist/index.mjs     [22m[32m932.00 B[39m
+[32mESM[39m [1mdist/index.mjs.map [22m[32m2.42 KB[39m
+[32mESM[39m ⚡️ Build success in 285ms
+[32mCJS[39m [1mdist/index.js     [22m[32m1.03 KB[39m
+[32mCJS[39m [1mdist/index.js.map [22m[32m2.44 KB[39m
+[32mCJS[39m ⚡️ Build success in 287ms
+DTS Build start
+DTS ⚡️ Build success in 3139ms
+DTS dist/index.d.ts  784.00 B
+DTS dist/index.d.mts 784.00 B

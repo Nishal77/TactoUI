@@ -1,0 +1,46 @@
+{
+  "name": "@tactoui/utils",
+  "version": "0.1.0",
+  "description": "Shared utilities for TactoUI",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.4.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.9.2"
+  },
+  "keywords": [
+    "react-native",
+    "ui",
+    "utilities",
+    "tailwind"
+  ],
+  "author": "TactoUI Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tactoui/tactoui.git",
+    "directory": "packages/utils"
+  }
+}
