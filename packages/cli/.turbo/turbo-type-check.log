@@ -1,0 +1,5 @@
+
+
+> @tactoui/cli@0.1.0 type-check /Users/nishalpoojary/Projects/Codes/ProjectRD/TactoUI/packages/cli
+> tsc --noEmit
+

@@ -1,6 +1,13 @@
 // Components
 export { Button } from './components/Button';
-export { Card } from './components/Card';
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from './components/Card';
 export { Switch } from './components/Switch';
 export { Input } from './components/Input';
 export { Badge } from './components/Badge';

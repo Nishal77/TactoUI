@@ -10,7 +10,13 @@ export interface ButtonProps extends TouchableOpacityProps {
   /**
    * Button variant
    */
-  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  variant?:
+    | 'default'
+    | 'destructive'
+    | 'outline'
+    | 'secondary'
+    | 'ghost'
+    | 'link';
   /**
    * Button size
    */
@@ -37,79 +43,101 @@ export interface ButtonProps extends TouchableOpacityProps {
   textClassName?: string;
 }
 
-const buttonVariants = {
-  default: 'bg-blue-500 active:bg-blue-600',
-  destructive: 'bg-red-500 active:bg-red-600',
-  outline: 'border border-gray-300 bg-white active:bg-gray-50',
-  secondary: 'bg-gray-100 active:bg-gray-200',
-  ghost: 'active:bg-gray-100',
-  link: 'underline-offset-4 active:underline',
-};
-
-const buttonSizes = {
-  default: 'h-10 px-4 py-2',
-  sm: 'h-9 rounded-md px-3',
-  lg: 'h-11 rounded-md px-8',
-  icon: 'h-10 w-10',
-};
-
-const textVariants = {
-  default: 'text-white',
-  destructive: 'text-white',
-  outline: 'text-gray-900',
-  secondary: 'text-gray-900',
-  ghost: 'text-gray-900',
-  link: 'text-blue-500 underline',
-};
-
-const textSizes = {
-  default: 'text-sm font-medium',
-  sm: 'text-sm',
-  lg: 'text-base',
-  icon: 'text-sm',
-};
-
 export function Button({
   variant = 'default',
   size = 'default',
   children,
   loading = false,
   disabled = false,
-  className,
-  textClassName,
+  className: _className,
+  textClassName: _textClassName,
   style,
   ...props
 }: ButtonProps) {
   const isDisabled = disabled || loading;
 
-  const buttonClasses = [
-    'inline-flex items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
-    buttonVariants[variant],
-    buttonSizes[size],
-    className,
-  ].filter(Boolean).join(' ');
+  const buttonStyles = {
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+    borderRadius: 6,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    ...(variant === 'default' && {
+      backgroundColor: '#3b82f6',
+    }),
+    ...(variant === 'destructive' && {
+      backgroundColor: '#ef4444',
+    }),
+    ...(variant === 'outline' && {
+      backgroundColor: 'transparent',
+      borderWidth: 1,
+      borderColor: '#d1d5db',
+    }),
+    ...(variant === 'secondary' && {
+      backgroundColor: '#f3f4f6',
+    }),
+    ...(variant === 'ghost' && {
+      backgroundColor: 'transparent',
+    }),
+    ...(variant === 'link' && {
+      backgroundColor: 'transparent',
+    }),
+    ...(size === 'sm' && {
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+    }),
+    ...(size === 'lg' && {
+      paddingHorizontal: 20,
+      paddingVertical: 12,
+    }),
+    ...(size === 'icon' && {
+      paddingHorizontal: 8,
+      paddingVertical: 8,
+    }),
+    ...(disabled && {
+      opacity: 0.5,
+    }),
+  };
 
-  const textClasses = [
-    textVariants[variant],
-    textSizes[size],
-    textClassName,
-  ].filter(Boolean).join(' ');
+  const textStyles = {
+    fontWeight: '500' as const,
+    color:
+      variant === 'default' || variant === 'destructive'
+        ? '#ffffff'
+        : '#000000',
+    ...(size === 'sm' && {
+      fontSize: 12,
+    }),
+    ...(size === 'default' && {
+      fontSize: 14,
+    }),
+    ...(size === 'lg' && {
+      fontSize: 16,
+    }),
+    ...(size === 'icon' && {
+      fontSize: 14,
+    }),
+  };
 
   return (
     <TouchableOpacity
-      className={buttonClasses}
       disabled={isDisabled}
-      style={style}
+      style={[buttonStyles, style]}
       {...props}
     >
       {loading && (
         <ActivityIndicator
           size="small"
-          color={variant === 'default' || variant === 'destructive' ? 'white' : 'black'}
+          color={
+            variant === 'default' || variant === 'destructive'
+              ? 'white'
+              : 'black'
+          }
           style={{ marginRight: 8 }}
         />
       )}
-      <Text className={textClasses}>{children}</Text>
+      <Text style={textStyles}>{children}</Text>
     </TouchableOpacity>
   );
 }

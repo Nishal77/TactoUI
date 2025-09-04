@@ -24,20 +24,37 @@ export interface CardFooterProps extends ViewProps {
 export interface CardTitleProps {
   children: React.ReactNode;
   className?: string;
+  style?: object;
 }
 
 export interface CardDescriptionProps {
   children: React.ReactNode;
   className?: string;
+  style?: object;
 }
 
-export function Card({ children, className, ...props }: CardProps) {
+export function Card({
+  children,
+  className: _className,
+  style,
+  ...props
+}: CardProps) {
   return (
     <View
-      className={[
-        'rounded-lg border border-gray-200 bg-white shadow-sm',
-        className,
-      ].filter(Boolean).join(' ')}
+      style={[
+        {
+          borderRadius: 8,
+          borderWidth: 1,
+          borderColor: '#e5e7eb',
+          backgroundColor: '#ffffff',
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 1 },
+          shadowOpacity: 0.05,
+          shadowRadius: 2,
+          elevation: 1,
+        },
+        style,
+      ]}
       {...props}
     >
       {children}
@@ -45,46 +62,112 @@ export function Card({ children, className, ...props }: CardProps) {
   );
 }
 
-export function CardHeader({ children, className, ...props }: CardHeaderProps) {
+export function CardHeader({
+  children,
+  className: _className,
+  style,
+  ...props
+}: CardHeaderProps) {
   return (
-    <View className={['flex flex-col space-y-1.5 p-6', className].filter(Boolean).join(' ')} {...props}>
+    <View
+      style={[
+        {
+          flexDirection: 'column' as const,
+          padding: 24,
+        },
+        style,
+      ]}
+      {...props}
+    >
       {children}
     </View>
   );
 }
 
-export function CardTitle({ children, className }: CardTitleProps) {
+export function CardTitle({
+  children,
+  className: _className,
+  style,
+}: CardTitleProps) {
   return (
     <Text
-      className={[
-        'text-2xl font-semibold leading-none tracking-tight text-gray-900',
-        className,
-      ].filter(Boolean).join(' ')}
+      style={[
+        {
+          fontSize: 24,
+          fontWeight: '600' as const,
+          lineHeight: 24,
+          letterSpacing: -0.025,
+          color: '#111827',
+        },
+        style,
+      ]}
     >
       {children}
     </Text>
   );
 }
 
-export function CardDescription({ children, className }: CardDescriptionProps) {
+export function CardDescription({
+  children,
+  className: _className,
+  style,
+}: CardDescriptionProps) {
   return (
-    <Text className={['text-sm text-gray-600', className].filter(Boolean).join(' ')}>
+    <Text
+      style={[
+        {
+          fontSize: 14,
+          color: '#6b7280',
+        },
+        style,
+      ]}
+    >
       {children}
     </Text>
   );
 }
 
-export function CardContent({ children, className, ...props }: CardContentProps) {
+export function CardContent({
+  children,
+  className: _className,
+  style,
+  ...props
+}: CardContentProps) {
   return (
-    <View className={['p-6 pt-0', className].filter(Boolean).join(' ')} {...props}>
+    <View
+      style={[
+        {
+          padding: 24,
+          paddingTop: 0,
+        },
+        style,
+      ]}
+      {...props}
+    >
       {children}
     </View>
   );
 }
 
-export function CardFooter({ children, className, ...props }: CardFooterProps) {
+export function CardFooter({
+  children,
+  className: _className,
+  style,
+  ...props
+}: CardFooterProps) {
   return (
-    <View className={['flex items-center p-6 pt-0', className].filter(Boolean).join(' ')} {...props}>
+    <View
+      style={[
+        {
+          flexDirection: 'row' as const,
+          alignItems: 'center' as const,
+          padding: 24,
+          paddingTop: 0,
+        },
+        style,
+      ]}
+      {...props}
+    >
       {children}
     </View>
   );
