@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
+import Link from 'next/link';
 
 export default function ComponentsLayout({
   children,
@@ -14,16 +15,16 @@ export default function ComponentsLayout({
         <div className="absolute left-0 top-0 bottom-0 w-px border-l border-dashed border-gray-600"></div>
 
         {/* Left Sidebar */}
-        <aside className="hidden lg:block w-64 p-4 border-r border-dashed overflow-y-auto ml-5">
+        <aside className="hidden lg:block w-64 p-4 border-r border-dashed overflow-y-auto ml-5 scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full">
           <nav className="space-y-6">
             {/* Getting Started */}
             <div>
-              <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-semibold text-white/90 uppercase tracking-wider mb-3">
                 Getting Started
               </h3>
               <div className="space-y-1">
-                <a
-                  href="/"
+                <Link
+                  href="/docs/introduction"
                   className="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/50 cursor-pointer transition-colors"
                 >
                   <svg
@@ -40,9 +41,9 @@ export default function ComponentsLayout({
                     />
                   </svg>
                   <span className="text-sm">Introduction</span>
-                </a>
-                <a
-                  href="/installation"
+                </Link>
+                <Link
+                  href="/docs/installation"
                   className="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/50 cursor-pointer transition-colors"
                 >
                   <svg
@@ -59,9 +60,9 @@ export default function ComponentsLayout({
                     />
                   </svg>
                   <span className="text-sm">Installation</span>
-                </a>
-                <a
-                  href="/theming"
+                </Link>
+                <Link
+                  href="/docs/theming"
                   className="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/50 cursor-pointer transition-colors"
                 >
                   <svg
@@ -78,7 +79,7 @@ export default function ComponentsLayout({
                     />
                   </svg>
                   <span className="text-sm">Theming</span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -287,8 +288,8 @@ export default function ComponentsLayout({
                 CLI
               </h3>
               <div className="space-y-1">
-                <a
-                  href="/cli"
+                <Link
+                  href="/docs/cli"
                   className="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800/50 cursor-pointer transition-colors"
                 >
                   <svg
@@ -305,17 +306,19 @@ export default function ComponentsLayout({
                     />
                   </svg>
                   <span className="text-sm">CLI Reference</span>
-                </a>
+                </Link>
               </div>
             </div>
           </nav>
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-y-auto ml-8">{children}</main>
+        <main className="flex-1 p-6 overflow-y-auto ml-8 scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full">
+          <div className="max-w-4xl mx-auto">{children}</div>
+        </main>
 
         {/* Right Sidebar */}
-        <aside className="hidden xl:block w-64 p-4 border-l border-gray-800 overflow-y-auto ml-4">
+        <aside className="hidden xl:block w-64 p-4 border-l border-gray-800 overflow-y-auto ml-4 scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full">
           <div className="mb-6">
             <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
               On This Page

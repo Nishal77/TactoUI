@@ -13,7 +13,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const menuItems = [
-  { name: 'Docs', href: '#' },
+  { name: 'Docs', href: '/docs' },
   { name: 'Components', href: '/components' },
   { name: 'Blocks', href: '#' },
 ];
@@ -63,7 +63,12 @@ export default function LandingHeader() {
         <div className="flex items-center justify-between h-16 ml-4 mr-4">
           {/* Left Section - Logo and Brand */}
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-semibold text-white">TactoUI</span>
+            <Link
+              href="/home"
+              className="text-xl font-semibold text-white hover:text-gray-300 transition-colors"
+            >
+              TactoUI
+            </Link>
           </div>
 
           {/* Center Section - Search Bar */}
