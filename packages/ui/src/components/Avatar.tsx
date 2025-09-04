@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, type ViewProps, type ImageProps } from 'react-native';
+import { View, Text, Image, type ViewProps } from 'react-native';
 
 export interface AvatarProps extends ViewProps {
   /**
@@ -38,7 +38,7 @@ export function Avatar({
   src,
   fallback,
   size = 'md',
-  className,
+  className: _className,
   style,
   ...props
 }: AvatarProps) {

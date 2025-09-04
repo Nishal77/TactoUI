@@ -1,5 +1,10 @@
 import React from 'react';
-import { TouchableOpacity, View, Text, type TouchableOpacityProps } from 'react-native';
+import {
+  TouchableOpacity,
+  View,
+  Text,
+  type TouchableOpacityProps,
+} from 'react-native';
 
 export interface CheckboxProps extends Omit<TouchableOpacityProps, 'onPress'> {
   /**
@@ -9,7 +14,7 @@ export interface CheckboxProps extends Omit<TouchableOpacityProps, 'onPress'> {
   /**
    * Callback when the checkbox value changes
    */
-  onCheckedChange?: (checked: boolean) => void;
+  onCheckedChange?: (_checked: boolean) => void;
   /**
    * Checkbox label
    */
@@ -29,17 +34,17 @@ export interface CheckboxProps extends Omit<TouchableOpacityProps, 'onPress'> {
 }
 
 export function Checkbox({
-  checked = false,
+  checked: _checked = false,
   onCheckedChange,
   label,
-  className,
-  checkboxClassName,
-  labelClassName,
+  className: _className,
+  checkboxClassName: _checkboxClassName,
+  labelClassName: _labelClassName,
   style,
   ...props
 }: CheckboxProps) {
   const handlePress = () => {
-    onCheckedChange?.(!checked);
+    onCheckedChange?.(!_checked);
   };
 
   return (
@@ -65,10 +70,10 @@ export function Checkbox({
           borderColor: '#3b82f6',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: checked ? '#3b82f6' : 'transparent',
+          backgroundColor: _checked ? '#3b82f6' : 'transparent',
         }}
       >
-        {checked && (
+        {_checked && (
           <Text
             style={{
               fontSize: 12,

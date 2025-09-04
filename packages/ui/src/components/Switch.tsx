@@ -1,6 +1,9 @@
 import React from 'react';
-import { Switch as RNSwitch, type SwitchProps as RNSwitchProps } from 'react-native';
-import { cn } from '../utils/cn';
+import {
+  Switch as RNSwitch,
+  type SwitchProps as RNSwitchProps,
+} from 'react-native';
+// import { cn } from '../utils/cn';
 
 export interface SwitchProps extends Omit<RNSwitchProps, 'onValueChange'> {
   /**
@@ -10,7 +13,7 @@ export interface SwitchProps extends Omit<RNSwitchProps, 'onValueChange'> {
   /**
    * Callback when the switch value changes
    */
-  onCheckedChange?: (checked: boolean) => void;
+  onCheckedChange?: (_checked: boolean) => void;
   /**
    * Additional className for styling
    */
@@ -18,21 +21,21 @@ export interface SwitchProps extends Omit<RNSwitchProps, 'onValueChange'> {
 }
 
 export function Switch({
-  checked = false,
+  checked: _checked = false,
   onCheckedChange,
-  className,
+  className: _className,
   style,
   ...props
 }: SwitchProps) {
   return (
     <RNSwitch
-      value={checked}
+      value={_checked}
       onValueChange={onCheckedChange}
       trackColor={{
         false: '#e2e8f0',
         true: '#3b82f6',
       }}
-      thumbColor={checked ? '#ffffff' : '#f4f4f5'}
+      thumbColor={_checked ? '#ffffff' : '#f4f4f5'}
       ios_backgroundColor="#e2e8f0"
       style={style}
       {...props}

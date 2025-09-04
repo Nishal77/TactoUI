@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Alert } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { useState } from 'react';
 import { Switch } from '@tactoui/ui';
 
@@ -19,10 +19,7 @@ export default function SwitchScreen() {
           <View className="bg-white rounded-lg border border-gray-200 p-4">
             <View className="flex-row items-center justify-between">
               <Text className="text-gray-900">Enable notifications</Text>
-              <Switch
-                checked={basicSwitch}
-                onCheckedChange={setBasicSwitch}
-              />
+              <Switch checked={basicSwitch} onCheckedChange={setBasicSwitch} />
             </View>
           </View>
         </View>
@@ -36,8 +33,12 @@ export default function SwitchScreen() {
             <View className="p-4 border-b border-gray-100">
               <View className="flex-row items-center justify-between">
                 <View>
-                  <Text className="text-gray-900 font-medium">Push Notifications</Text>
-                  <Text className="text-gray-600 text-sm">Receive push notifications</Text>
+                  <Text className="text-gray-900 font-medium">
+                    Push Notifications
+                  </Text>
+                  <Text className="text-gray-600 text-sm">
+                    Receive push notifications
+                  </Text>
                 </View>
                 <Switch
                   checked={notifications}
@@ -45,30 +46,26 @@ export default function SwitchScreen() {
                 />
               </View>
             </View>
-            
+
             <View className="p-4 border-b border-gray-100">
               <View className="flex-row items-center justify-between">
                 <View>
                   <Text className="text-gray-900 font-medium">Dark Mode</Text>
                   <Text className="text-gray-600 text-sm">Use dark theme</Text>
                 </View>
-                <Switch
-                  checked={darkMode}
-                  onCheckedChange={setDarkMode}
-                />
+                <Switch checked={darkMode} onCheckedChange={setDarkMode} />
               </View>
             </View>
-            
+
             <View className="p-4">
               <View className="flex-row items-center justify-between">
                 <View>
                   <Text className="text-gray-900 font-medium">Auto Save</Text>
-                  <Text className="text-gray-600 text-sm">Automatically save changes</Text>
+                  <Text className="text-gray-600 text-sm">
+                    Automatically save changes
+                  </Text>
                 </View>
-                <Switch
-                  checked={autoSave}
-                  onCheckedChange={setAutoSave}
-                />
+                <Switch checked={autoSave} onCheckedChange={setAutoSave} />
               </View>
             </View>
           </View>
@@ -83,20 +80,14 @@ export default function SwitchScreen() {
             <View className="bg-white rounded-lg border border-gray-200 p-4">
               <View className="flex-row items-center justify-between">
                 <Text className="text-gray-500">Disabled (off)</Text>
-                <Switch
-                  checked={false}
-                  disabled
-                />
+                <Switch checked={false} disabled />
               </View>
             </View>
-            
+
             <View className="bg-white rounded-lg border border-gray-200 p-4">
               <View className="flex-row items-center justify-between">
                 <Text className="text-gray-500">Disabled (on)</Text>
-                <Switch
-                  checked={true}
-                  disabled
-                />
+                <Switch checked={true} disabled />
               </View>
             </View>
           </View>

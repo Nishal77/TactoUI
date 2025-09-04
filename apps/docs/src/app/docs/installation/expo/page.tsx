@@ -96,13 +96,12 @@ export default function ExpoInstallationPage() {
               <p className="text-gray-400 mb-4">
                 Start using TactoUI components in your app.
               </p>
+              {/* eslint-disable no-undef */}
               <div className="bg-black/50 rounded-lg p-4 font-mono text-sm">
                 <div className="text-gray-400">// App.js</div>
-                {/* eslint-disable-next-line no-undef */}
                 <div className="text-white">
                   import {(Button, Card)} from '@tactoui/ui';
                 </div>
-                {/* eslint-disable-next-line no-undef */}
                 <div className="text-white">
                   import {View} from 'react-native';
                 </div>
@@ -116,6 +115,7 @@ export default function ExpoInstallationPage() {
                 <div className="text-white ml-2">);</div>
                 <div className="text-white">{`}`}</div>
               </div>
+              {/* eslint-enable no-undef */}
             </div>
           </div>
         </div>

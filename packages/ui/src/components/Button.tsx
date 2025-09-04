@@ -7,13 +7,19 @@ import {
   type TextStyle,
   type ViewStyle,
 } from 'react-native';
-import { cn } from '../utils/cn';
+// import { cn } from '../utils/cn';
 
 export interface ButtonProps extends TouchableOpacityProps {
   /**
    * Button variant
    */
-  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  variant?:
+    | 'default'
+    | 'destructive'
+    | 'outline'
+    | 'secondary'
+    | 'ghost'
+    | 'link';
   /**
    * Button size
    */
@@ -129,8 +135,8 @@ export function Button({
   children,
   loading = false,
   disabled = false,
-  className,
-  textClassName,
+  className: _className,
+  textClassName: _textClassName,
   style,
   ...props
 }: ButtonProps) {
@@ -153,15 +159,15 @@ export function Button({
   };
 
   return (
-    <TouchableOpacity
-      style={buttonStyle}
-      disabled={isDisabled}
-      {...props}
-    >
+    <TouchableOpacity style={buttonStyle} disabled={isDisabled} {...props}>
       {loading && (
         <ActivityIndicator
           size="small"
-          color={variant === 'default' || variant === 'destructive' ? 'white' : 'black'}
+          color={
+            variant === 'default' || variant === 'destructive'
+              ? 'white'
+              : 'black'
+          }
           style={{ marginRight: 8 }}
         />
       )}

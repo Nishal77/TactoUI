@@ -24,7 +24,7 @@ export interface ProgressProps extends ViewProps {
 export function Progress({
   value = 0,
   max = 100,
-  className,
+  className: _className,
   style,
   ...props
 }: ProgressProps) {

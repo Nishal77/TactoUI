@@ -1,11 +1,13 @@
-const withMDX = require('@next/mdx')({
+import createMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
+
+const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [require('remark-gfm')],
-    rehypePlugins: [
-      require('rehype-pretty-code'),
-      require('rehype-slug'),
-    ],
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypePrettyCode, rehypeSlug],
   },
 });
 
@@ -18,4 +20,4 @@ const nextConfig = {
   transpilePackages: ['@tactoui/ui'],
 };
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);

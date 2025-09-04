@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, type ViewProps } from 'react-native';
-import { cn } from '../utils/cn';
+// import { cn } from '../utils/cn';
 
 export interface CardProps extends ViewProps {
   children: React.ReactNode;
@@ -32,7 +32,12 @@ export interface CardDescriptionProps {
   className?: string;
 }
 
-export function Card({ children, className, style, ...props }: CardProps) {
+export function Card({
+  children,
+  className: _className,
+  style,
+  ...props
+}: CardProps) {
   return (
     <View
       style={[
@@ -56,7 +61,12 @@ export function Card({ children, className, style, ...props }: CardProps) {
   );
 }
 
-export function CardHeader({ children, className, style, ...props }: CardHeaderProps) {
+export function CardHeader({
+  children,
+  className: _className,
+  style,
+  ...props
+}: CardHeaderProps) {
   return (
     <View
       style={[
@@ -74,7 +84,7 @@ export function CardHeader({ children, className, style, ...props }: CardHeaderP
   );
 }
 
-export function CardTitle({ children, className }: CardTitleProps) {
+export function CardTitle({ children, className: _className }: CardTitleProps) {
   return (
     <Text
       style={{
@@ -90,7 +100,10 @@ export function CardTitle({ children, className }: CardTitleProps) {
   );
 }
 
-export function CardDescription({ children, className }: CardDescriptionProps) {
+export function CardDescription({
+  children,
+  className: _className,
+}: CardDescriptionProps) {
   return (
     <Text
       style={{
@@ -103,7 +116,12 @@ export function CardDescription({ children, className }: CardDescriptionProps) {
   );
 }
 
-export function CardContent({ children, className, style, ...props }: CardContentProps) {
+export function CardContent({
+  children,
+  className: _className,
+  style,
+  ...props
+}: CardContentProps) {
   return (
     <View
       style={[
@@ -120,7 +138,12 @@ export function CardContent({ children, className, style, ...props }: CardConten
   );
 }
 
-export function CardFooter({ children, className, style, ...props }: CardFooterProps) {
+export function CardFooter({
+  children,
+  className: _className,
+  style,
+  ...props
+}: CardFooterProps) {
   return (
     <View
       style={[

@@ -53,7 +53,7 @@ const textVariants = {
 export function Badge({
   variant = 'default',
   children,
-  className,
+  className: _className,
   style,
   ...props
 }: BadgeProps) {

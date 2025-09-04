@@ -1,0 +1,5 @@
+
+
+> @tactoui/ui@0.1.0 lint /Users/nishalpoojary/Projects/Codes/ProjectRD/TactoUI/packages/ui
+> eslint src --ext .ts,.tsx
+

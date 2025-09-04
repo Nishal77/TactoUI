@@ -1,18 +1,20 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Copy, Download } from 'lucide-react';
+import { ArrowRight, Copy } from 'lucide-react';
 
 const components = [
   {
     name: 'Button',
-    description: 'Interactive button component with multiple variants and sizes',
+    description:
+      'Interactive button component with multiple variants and sizes',
     category: 'Form',
     usage: 'npx tactoui add button',
   },
   {
     name: 'Card',
-    description: 'Container component with header, content, and footer sections',
+    description:
+      'Container component with header, content, and footer sections',
     category: 'Layout',
     usage: 'npx tactoui add card',
   },
@@ -66,18 +68,15 @@ const components = [
   },
 ];
 
-const categories = ['All', 'Form', 'Layout', 'Display'];
-
 export default function ComponentsPage() {
   return (
     <div className="max-w-6xl mx-auto">
       {/* Page Header */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-white mb-4">
-          Components
-        </h1>
+        <h1 className="text-4xl font-bold text-white mb-4">Components</h1>
         <p className="text-lg text-gray-400">
-          Copy and paste components into your app, or use our CLI to scaffold them automatically.
+          Copy and paste components into your app, or use our CLI to scaffold
+          them automatically.
         </p>
       </div>
 
@@ -88,13 +87,17 @@ export default function ComponentsPage() {
         </h2>
         <div className="space-y-3">
           <div>
-            <p className="text-sm text-blue-200 mb-2">1. Install TactoUI CLI:</p>
+            <p className="text-sm text-blue-200 mb-2">
+              1. Install TactoUI CLI:
+            </p>
             <div className="bg-gray-900 text-gray-100 p-3 rounded-md font-mono text-sm">
               npm install -g @tactoui/cli
             </div>
           </div>
           <div>
-            <p className="text-sm text-blue-200 mb-2">2. Add a component to your project:</p>
+            <p className="text-sm text-blue-200 mb-2">
+              2. Add a component to your project:
+            </p>
             <div className="bg-gray-900 text-gray-100 p-3 rounded-md font-mono text-sm">
               npx tactoui add button
             </div>
@@ -119,11 +122,11 @@ export default function ComponentsPage() {
                 </span>
               </div>
             </div>
-            
+
             <p className="text-gray-400 text-sm mb-4">
               {component.description}
             </p>
-            
+
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-500">CLI Command:</span>
@@ -138,7 +141,7 @@ export default function ComponentsPage() {
                 {component.usage}
               </div>
             </div>
-            
+
             <Link
               href={`/components/${component.name.toLowerCase()}`}
               className="inline-flex items-center text-blue-400 hover:text-blue-300 text-sm font-medium mt-4"

@@ -1,5 +1,10 @@
 import React from 'react';
-import { TouchableOpacity, View, Text, type TouchableOpacityProps } from 'react-native';
+import {
+  TouchableOpacity,
+  View,
+  Text,
+  type TouchableOpacityProps,
+} from 'react-native';
 
 export interface RadioProps extends Omit<TouchableOpacityProps, 'onPress'> {
   /**
@@ -9,7 +14,7 @@ export interface RadioProps extends Omit<TouchableOpacityProps, 'onPress'> {
   /**
    * Callback when the radio value changes
    */
-  onCheckedChange?: (checked: boolean) => void;
+  onCheckedChange?: (_checked: boolean) => void;
   /**
    * Radio label
    */
@@ -33,18 +38,18 @@ export interface RadioProps extends Omit<TouchableOpacityProps, 'onPress'> {
 }
 
 export function Radio({
-  checked = false,
+  checked: _checked = false,
   onCheckedChange,
   label,
-  value,
-  className,
-  radioClassName,
-  labelClassName,
+  value: _value,
+  className: _className,
+  radioClassName: _radioClassName,
+  labelClassName: _labelClassName,
   style,
   ...props
 }: RadioProps) {
   const handlePress = () => {
-    onCheckedChange?.(!checked);
+    onCheckedChange?.(!_checked);
   };
 
   return (
@@ -67,12 +72,12 @@ export function Radio({
           width: 16,
           borderRadius: 9999,
           borderWidth: 1,
-          borderColor: checked ? '#3b82f6' : '#d1d5db',
+          borderColor: _checked ? '#3b82f6' : '#d1d5db',
           alignItems: 'center',
           justifyContent: 'center',
         }}
       >
-        {checked && (
+        {_checked && (
           <View
             style={{
               height: 8,

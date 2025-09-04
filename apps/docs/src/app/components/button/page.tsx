@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, Copy, Download } from 'lucide-react';
+import { ArrowLeft, Copy } from 'lucide-react';
 
 export default function ButtonPage() {
   const codeExample = `import { Button } from '@tactoui/ui';
@@ -43,26 +43,27 @@ export function MyComponent() {
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Components
         </Link>
-        <h1 className="text-4xl font-bold text-white mb-4">
-          Button
-        </h1>
+        <h1 className="text-4xl font-bold text-white mb-4">Button</h1>
         <p className="text-lg text-gray-400">
-          Interactive button component with multiple variants, sizes, and states.
+          Interactive button component with multiple variants, sizes, and
+          states.
         </p>
       </div>
 
       {/* Installation */}
       <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mb-8">
-        <h2 className="text-xl font-semibold text-white mb-4">
-          Installation
-        </h2>
+        <h2 className="text-xl font-semibold text-white mb-4">Installation</h2>
         <div className="space-y-4">
           <div>
-            <p className="text-sm text-gray-400 mb-2">Using CLI (Recommended):</p>
+            <p className="text-sm text-gray-400 mb-2">
+              Using CLI (Recommended):
+            </p>
             <div className="flex items-center justify-between bg-gray-800 text-gray-100 p-3 rounded-md">
               <code className="font-mono text-sm">npx tactoui add button</code>
               <button
-                onClick={() => navigator.clipboard.writeText('npx tactoui add button')}
+                onClick={() =>
+                  navigator.clipboard.writeText('npx tactoui add button')
+                }
                 className="text-gray-400 hover:text-white"
               >
                 <Copy className="h-4 w-4" />
@@ -74,7 +75,9 @@ export function MyComponent() {
             <div className="flex items-center justify-between bg-gray-800 text-gray-100 p-3 rounded-md">
               <code className="font-mono text-sm">npm install @tactoui/ui</code>
               <button
-                onClick={() => navigator.clipboard.writeText('npm install @tactoui/ui')}
+                onClick={() =>
+                  navigator.clipboard.writeText('npm install @tactoui/ui')
+                }
                 className="text-gray-400 hover:text-white"
               >
                 <Copy className="h-4 w-4" />
@@ -86,9 +89,7 @@ export function MyComponent() {
 
       {/* Basic Usage */}
       <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mb-8">
-        <h2 className="text-xl font-semibold text-white mb-4">
-          Basic Usage
-        </h2>
+        <h2 className="text-xl font-semibold text-white mb-4">Basic Usage</h2>
         <div className="flex items-center justify-between bg-gray-800 text-gray-100 p-4 rounded-md mb-4">
           <code className="font-mono text-sm">{codeExample}</code>
           <button
@@ -102,11 +103,13 @@ export function MyComponent() {
 
       {/* Variants */}
       <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mb-8">
-        <h2 className="text-xl font-semibold text-white mb-4">
-          Variants
-        </h2>
+        <h2 className="text-xl font-semibold text-white mb-4">Variants</h2>
         <p className="text-gray-400 mb-4">
-          Use the <code className="bg-gray-700 px-2 py-1 rounded text-sm text-gray-300">variant</code> prop to change the button's appearance.
+          Use the{' '}
+          <code className="bg-gray-700 px-2 py-1 rounded text-sm text-gray-300">
+            variant
+          </code>{' '}
+          prop to change the button's appearance.
         </p>
         <div className="flex items-center justify-between bg-gray-800 text-gray-100 p-4 rounded-md">
           <code className="font-mono text-sm">{variantsExample}</code>
@@ -121,11 +124,13 @@ export function MyComponent() {
 
       {/* Sizes */}
       <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mb-8">
-        <h2 className="text-xl font-semibold text-white mb-4">
-          Sizes
-        </h2>
+        <h2 className="text-xl font-semibold text-white mb-4">Sizes</h2>
         <p className="text-gray-400 mb-4">
-          Use the <code className="bg-gray-700 px-2 py-1 rounded text-sm text-gray-300">size</code> prop to change the button's size.
+          Use the{' '}
+          <code className="bg-gray-700 px-2 py-1 rounded text-sm text-gray-300">
+            size
+          </code>{' '}
+          prop to change the button's size.
         </p>
         <div className="flex items-center justify-between bg-gray-800 text-gray-100 p-4 rounded-md">
           <code className="font-mono text-sm">{sizesExample}</code>
@@ -140,11 +145,17 @@ export function MyComponent() {
 
       {/* States */}
       <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mb-8">
-        <h2 className="text-xl font-semibold text-white mb-4">
-          States
-        </h2>
+        <h2 className="text-xl font-semibold text-white mb-4">States</h2>
         <p className="text-gray-400 mb-4">
-          Use the <code className="bg-gray-700 px-2 py-1 rounded text-sm text-gray-300">loading</code> and <code className="bg-gray-700 px-2 py-1 rounded text-sm text-gray-300">disabled</code> props to control button states.
+          Use the{' '}
+          <code className="bg-gray-700 px-2 py-1 rounded text-sm text-gray-300">
+            loading
+          </code>{' '}
+          and{' '}
+          <code className="bg-gray-700 px-2 py-1 rounded text-sm text-gray-300">
+            disabled
+          </code>{' '}
+          props to control button states.
         </p>
         <div className="flex items-center justify-between bg-gray-800 text-gray-100 p-4 rounded-md">
           <code className="font-mono text-sm">{statesExample}</code>
@@ -159,23 +170,28 @@ export function MyComponent() {
 
       {/* API Reference */}
       <div className="bg-gray-900 rounded-lg border border-gray-800 p-6">
-        <h2 className="text-xl font-semibold text-white mb-4">
-          API Reference
-        </h2>
+        <h2 className="text-xl font-semibold text-white mb-4">API Reference</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-700">
                 <th className="text-left py-2 font-medium text-white">Prop</th>
                 <th className="text-left py-2 font-medium text-white">Type</th>
-                <th className="text-left py-2 font-medium text-white">Default</th>
-                <th className="text-left py-2 font-medium text-white">Description</th>
+                <th className="text-left py-2 font-medium text-white">
+                  Default
+                </th>
+                <th className="text-left py-2 font-medium text-white">
+                  Description
+                </th>
               </tr>
             </thead>
             <tbody className="text-gray-400">
               <tr className="border-b border-gray-800">
                 <td className="py-2 font-mono text-gray-300">variant</td>
-                <td className="py-2">'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'</td>
+                <td className="py-2">
+                  'default' | 'destructive' | 'outline' | 'secondary' | 'ghost'
+                  | 'link'
+                </td>
                 <td className="py-2">'default'</td>
                 <td className="py-2">Button variant</td>
               </tr>

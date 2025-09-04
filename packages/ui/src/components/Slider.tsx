@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, type ViewProps } from 'react-native';
 import RNSlider from '@react-native-community/slider';
-import { cn } from '../utils/cn';
+// import { cn } from '../utils/cn';
 
 export interface SliderProps extends ViewProps {
   /**
@@ -23,11 +23,11 @@ export interface SliderProps extends ViewProps {
   /**
    * Callback when value changes
    */
-  onValueChange?: (value: number) => void;
+  onValueChange?: (_value: number) => void;
   /**
    * Callback when value change is complete
    */
-  onSlidingComplete?: (value: number) => void;
+  onSlidingComplete?: (_value: number) => void;
   /**
    * Whether the slider is disabled
    */
@@ -46,7 +46,7 @@ export function Slider({
   onValueChange,
   onSlidingComplete,
   disabled = false,
-  className,
+  className: _className,
   style,
   ...props
 }: SliderProps) {

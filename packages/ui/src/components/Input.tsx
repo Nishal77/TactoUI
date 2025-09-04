@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextInput, View, Text, type TextInputProps } from 'react-native';
-import { cn } from '../utils/cn';
+// import { cn } from '../utils/cn';
 
 export interface InputProps extends TextInputProps {
   /**
@@ -28,9 +28,9 @@ export interface InputProps extends TextInputProps {
 export function Input({
   label,
   error,
-  className,
-  inputClassName,
-  labelClassName,
+  className: _className,
+  inputClassName: _inputClassName,
+  labelClassName: _labelClassName,
   style,
   ...props
 }: InputProps) {
@@ -68,9 +68,7 @@ export function Input({
         ]}
         {...props}
       />
-      {error && (
-        <Text style={{ fontSize: 14, color: '#ef4444' }}>{error}</Text>
-      )}
+      {error && <Text style={{ fontSize: 14, color: '#ef4444' }}>{error}</Text>}
     </View>
   );
 }

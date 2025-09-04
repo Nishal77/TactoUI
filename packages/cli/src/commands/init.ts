@@ -1,5 +1,4 @@
 import { Command } from 'commander';
-import inquirer from 'inquirer';
 import fs from 'fs-extra';
 import path from 'path';
 import chalk from 'chalk';
@@ -7,31 +6,43 @@ import ora from 'ora';
 
 export const initCommand = new Command('init')
   .description('Initialize TactoUI in your React Native project')
-  .option('-d, --dir <directory>', 'Directory to create components in', 'src/components')
+  .option(
+    '-d, --dir <directory>',
+    'Directory to create components in',
+    'src/components'
+  )
   .action(async (options) => {
     try {
       const spinner = ora('Initializing TactoUI...').start();
-      
+
       try {
         await initializeTactoUI(options.dir);
         spinner.succeed(chalk.green('✅ TactoUI initialized successfully!'));
-        
+
         console.log(chalk.blue('\n📝 What was created:'));
-        console.log(chalk.gray(`- ${options.dir}/ directory for your components`));
+        console.log(
+          chalk.gray(`- ${options.dir}/ directory for your components`)
+        );
         console.log(chalk.gray(`- Example component structure`));
-        
+
         console.log(chalk.blue('\n🚀 Next steps:'));
         console.log(chalk.gray('1. Install required dependencies:'));
-        console.log(chalk.gray('   npm install @tactoui/ui nativewind react-native-reanimated react-native-gesture-handler'));
+        console.log(
+          chalk.gray(
+            '   npm install @tactoui/ui nativewind react-native-reanimated react-native-gesture-handler'
+          )
+        );
         console.log(chalk.gray('2. Add components: npx tactoui add button'));
-        console.log(chalk.gray('3. List available components: npx tactoui list'));
-        
+        console.log(
+          chalk.gray('3. List available components: npx tactoui list')
+        );
       } catch (error) {
         spinner.fail(chalk.red('❌ Failed to initialize TactoUI'));
-        console.error(chalk.red(error instanceof Error ? error.message : 'Unknown error'));
+        console.error(
+          chalk.red(error instanceof Error ? error.message : 'Unknown error')
+        );
         process.exit(1);
       }
-      
     } catch (error) {
       console.error(chalk.red('❌ An error occurred:'), error);
       process.exit(1);
@@ -40,10 +51,10 @@ export const initCommand = new Command('init')
 
 async function initializeTactoUI(componentsDir: string) {
   const targetDir = path.join(process.cwd(), componentsDir);
-  
+
   // Create components directory
   await fs.ensureDir(targetDir);
-  
+
   // Create a README file
   const readmeContent = `# TactoUI Components
 
